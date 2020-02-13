@@ -1,23 +1,15 @@
 import React from 'react';
-import { Button } from 'antd';
 
-import {
- USE_NOTIFICATION, notifyType 
-} from '../shared/use/notification';
+import { LoginLayout } from '../layouts/LoginLayout';
 
-export const LoginPage: React.FC<{}> = () => {
+import LoginForm from './components/LoginForm';
 
-  return (
-    <Button 
-      type="ghost" 
-      onClick={
-        () => USE_NOTIFICATION({
-          type: notifyType.success, 
-          description: 'gaaaa'
-        })
-      }
-    >
-      gaaaaa
-    </Button>
-  );
-};
+export const LoginPage: React.FC<{}> = () => (
+
+  <LoginLayout>
+
+    <LoginForm />
+
+  </LoginLayout>
+  
+);
