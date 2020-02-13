@@ -13,62 +13,57 @@ module.exports = {
     },
   },
   rules: {
-    // eslint
-    "object-curly-newline": ["error", {
-      "ObjectExpression": "always",
-      "ObjectPattern": { "multiline": true },
-      "ImportDeclaration": { "multiline": true, "minProperties": 2 }
-   }],   
     semi: ['error', 'always'],
-    quotes: [
-      "error", "single",
-      { "allowTemplateLiterals": true }
-    ],
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'eol-last': ['error', 'always'],
     // react
-    'react/jsx-max-props-per-line': [
-      1, 
-      { maximum: 4 }
-    ],
-    'react/jsx-indent': [
-      2, 2, 
-      { checkAttributes: false }
-    ],
-    'react/jsx-indent-props': [2, 2],
-    'react/jsx-closing-bracket-location': [
-      1, 
-      'tag-aligned'
-    ],
+    'react/jsx-max-props-per-line': [1, { maximum: 4 }],
+    'react/jsx-indent': [2, 2, { checkAttributes: false }],
+    'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
     'react/jsx-curly-spacing': [
-      'error', 
-      { when: 'always', attributes: { when: 'never' }, children: true }
+      'error',
+      'always',
+      {
+        allowMultiline: true,
+      },
     ],
-    // '@typescript-eslint/explicit-function-return-type': [
-    //   'error',
-    //   {
-    //     allowExpressions: true,
-    //     allowTypedFunctionExpressions: true,
-    //     allowHigherOrderFunctions: true
-    //   },
-    // ],
   },
   overrides: [
     {
-      // enable the rule specifically for TypeScript files
       files: ['*.ts', '*.tsx'],
       rules: {
-        // '@typescript-eslint/explicit-function-return-type': [
-        //   'error',
-        //   {
-        //     allowExpressions: true,
-        //     allowTypedFunctionExpressions: true,
-        //     allowHigherOrderFunctions: true,
-        //     allowVoid: true
-            
-        //   },
-        // ],
-        "@typescript-eslint/explicit-function-return-type": "off"
-        // '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/explicit-function-return-type': [
+          'error',
+          {
+            allowExpressions: true,
+            allowTypedFunctionExpressions: true,
+            allowHigherOrderFunctions: true,
+            allowVoid: true,
+          },
+        ],
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/member-delimiter-style': [
+          'error',
+          {
+            multiline: {
+              delimiter: 'comma',
+              requireLast: false,
+            },
+            singleline: {
+              delimiter: 'comma',
+              requireLast: false,
+            },
+            overrides: {
+              interface: {
+                multiline: {
+                  delimiter: 'semi',
+                  requireLast: true,
+                },
+              },
+            },
+          },
+        ],
       },
     },
   ],

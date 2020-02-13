@@ -8,8 +8,8 @@ export enum notifyType {
 }
 
 interface Notification {
-  type: keyof typeof notifyType
-  description: string
+  type: keyof typeof notifyType;
+  description: string;
 }
 
 export const USE_NOTIFICATION = ({ type, description }: Notification) => {
