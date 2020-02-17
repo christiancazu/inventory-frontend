@@ -1,20 +1,5 @@
 @import '~antd/dist/antd.css';
 
-.login-layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  background: #2C3E50;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.card-title {
-  display: flex;
-  justify-content: center;
-}
-
-.card-border {
+.card-login {
   border-radius: 4px;
 }

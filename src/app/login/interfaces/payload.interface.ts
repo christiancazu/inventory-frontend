@@ -1,8 +1,8 @@
 import { Action } from 'redux';
 
-interface Payload extends Action {
+interface Payload<T> extends Action {
   type: string;
-  payload: string;
+  payload: T;
 }
 
 export default Payload;

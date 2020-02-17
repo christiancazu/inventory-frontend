@@ -4,12 +4,14 @@ import { LoginLayout } from '../layouts/LoginLayout';
 
 import LoginForm from './components/LoginForm';
 
-export const LoginPage: React.FC<{}> = () => (
+const LoginPage: React.FC<{}> = () => (
 
   <LoginLayout>
 
     <LoginForm />
 
   </LoginLayout>
-  
+
 );
+
+export default LoginPage;

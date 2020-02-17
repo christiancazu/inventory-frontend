@@ -1,4 +1,5 @@
-import { types as actionTypes } from './actions';
+import { types } from './actions';
+
 import Payload from '../../../login/interfaces/payload.interface';
 
 export enum spinnerType {
@@ -14,16 +15,17 @@ const initialState: Spinner = {
 };
 
 export default function reducer(
-  state: Spinner = initialState, { type, payload }: Payload
-  ) {
+  state: Spinner = initialState,
+  { type, payload }: Payload<spinnerType>
+) {
   switch (type) {
-    case actionTypes.ENABLE_SPINNER:
+    case types.ENABLE_SPINNER:
       return {
         ...state,
         [payload]: true
       };
 
-    case actionTypes.DISABLE_SPINNER:
+    case types.DISABLE_SPINNER:
       return {
         ...state,
         [payload]: false

@@ -9,14 +9,15 @@ export enum notifyType {
 
 interface Notification {
   type: keyof typeof notifyType;
-  description: string;
+  message: string;
+  description?: string;
 }
 
-export const USE_NOTIFICATION = ({ type, description }: Notification) => {
+export const USE_NOTIFY = ({ type, message, description = '' }: Notification) => {
 
   notification[type]({
-    message: 'Correcto',
+    message,
     description
   });
-  
+
 };

@@ -15,10 +15,31 @@ module.exports = {
   rules: {
     semi: ['error', 'always'],
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        VariableDeclarator: 'first',
+        MemberExpression: 1,
+        ImportDeclaration: 1,
+      },
+    ],
+    'no-trailing-spaces': 'error',
     'eol-last': ['error', 'always'],
+    'object-curly-spacing': ['error', 'always'],
+    // 'object-curly-newline': ['error', { multiline: true, minProperties: 2 }],
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: 'always',
+        ImportDeclaration: { multiline: false, minProperties: 2 },
+        ObjectPattern: { multiline: false, minProperties: 3 },
+      },
+    ],
     // react
-    'react/jsx-max-props-per-line': [1, { maximum: 4 }],
-    'react/jsx-indent': [2, 2, { checkAttributes: false }],
+    'react/jsx-max-props-per-line': [1, { maximum: 3 }],
+    'react/jsx-indent': [2, 2, { indentLogicalExpressions: true }],
     'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
     'react/jsx-curly-spacing': [
       'error',
@@ -32,6 +53,9 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-function-return-type': [
           'error',
           {
@@ -41,8 +65,6 @@ module.exports = {
             allowVoid: true,
           },
         ],
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/member-delimiter-style': [
           'error',
           {

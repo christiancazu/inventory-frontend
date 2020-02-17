@@ -1,7 +1,10 @@
 import {
- createStore, 
- combineReducers 
+  createStore,
+  combineReducers,
+  applyMiddleware
 } from 'redux';
+
+import thunk from 'redux-thunk';
 
 import auth from '../app/login/store';
 import spinners from '../app/shared/store/spinners';
@@ -11,4 +14,6 @@ const reducer = combineReducers({
   spinners
 });
 
-export default createStore(reducer);
+export default createStore(reducer, applyMiddleware(thunk));
+
+export type AppState = ReturnType<typeof reducer>
