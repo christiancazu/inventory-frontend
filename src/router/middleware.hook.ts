@@ -8,7 +8,6 @@ import authService from '../app/login/services/auth.service';
 import { AxiosResponse } from 'axios';
 import { Auth } from '../app/login/store';
 
-// eslint-disable
 export const useCheckAuth = () => {
   const { user }: Auth = store.getState().auth;
 

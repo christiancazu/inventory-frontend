@@ -14,24 +14,25 @@ import { useCheckAuth } from './middleware.hook';
 import SpinnerPage from '../app/shared/components/SpinnerPage';
 
 interface PrivateRouteProps extends RouteProps {
-  middleware?: () => void,
+  middleware?: () => void;
   redirectTo?: string;
-  component: React.ComponentType<RouteProps>
+  component: React.ComponentType<RouteProps>;
 }
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }: PrivateRouteProps) => {
 
   const isValid = rest.middleware;
 
   return (
     <Route
-      { ...rest}
+      { ...rest }
       render={
         props =>
           isValid === null
             ? <SpinnerPage />
             : isValid
               ? <Component { ...props }/>
+              // eslint-disable-next-line object-curly-newline
               : <Redirect to={ { pathname: rest.redirectTo, state: { from: props.location } } } />
       }
     />

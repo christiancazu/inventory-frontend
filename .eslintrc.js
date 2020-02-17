@@ -54,17 +54,17 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       rules: {
         '@typescript-eslint/no-empty-function': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/explicit-function-return-type': [
-          'error',
-          {
-            allowExpressions: true,
-            allowTypedFunctionExpressions: true,
-            allowHigherOrderFunctions: true,
-            allowVoid: true,
-          },
-        ],
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        // "@typescript-eslint/explicit-function-return-type": [
+        //   "error",
+        //   {
+        //     allowExpressions: true,
+        //     allowTypedFunctionExpressions: true,
+        //     allowHigherOrderFunctions: true,
+            
+        //   }
+        // ],
         '@typescript-eslint/member-delimiter-style': [
           'error',
           {
