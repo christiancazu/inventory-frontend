@@ -13,7 +13,9 @@ interface Notification {
   description?: string;
 }
 
-export const USE_NOTIFY = ({ type, message, description = '' }: Notification) => {
+export const USE_NOTIFY = ({
+  type, message, description = ''
+}: Notification) => {
 
   notification[type]({
     message,

@@ -11,16 +11,16 @@ import {
   FormComponentProps, WrappedFormInternalProps
 } from 'antd/lib/form/Form';
 
-import FormSetup from '../interfaces/form-setup.interface';
+import FormSetup from '../interfaces/form-setup';
 import BaseForm from '../../shared/components/BaseForm';
 
-import { required } from '../../config/rules.form';
+import { required } from '../../../config/rules.form';
 import { StyledCardTitle } from '../../../assets/styled/index';
 
 import {
   USE_NOTIFY, notifyType
 } from '../../shared/use/notification';
-import messages from '../../config/messages';
+import messages from '../../../config/messages';
 
 // redux dispatch
 const mapDispatchToProps = {

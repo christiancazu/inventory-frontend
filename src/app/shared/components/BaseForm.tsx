@@ -13,11 +13,11 @@ import { spinnerType } from '../store/spinners';
 import {
   USE_NOTIFY, notifyType
 } from '../use/notification';
-import messages from '../../config/messages';
+import messages from '../../../config/messages';
 
 import { AppState } from '../../../store';
 
-import FormSetup from '../../login/interfaces/form-setup.interface';
+import FormSetup from '../../auth/interfaces/form-setup';
 
 // redux state
 const mapStateToProps = (state: AppState) => ({
@@ -56,6 +56,7 @@ const BaseForm = ({
             ENABLE_SPINNER(spinnerType.processingForm);
 
             await formSetup.dispatch(values);
+
             formSetup.successSubmit();
           } catch (e) {
             formSetup.errorSubmit(e);

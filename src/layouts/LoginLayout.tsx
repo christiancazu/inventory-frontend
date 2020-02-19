@@ -4,7 +4,7 @@ import {
   Row, Col
 } from 'antd';
 
-import { StyledCenterLayout } from '../../assets/styled/index';
+import { StyledCenterLayout } from '../assets/styled/index';
 
 export const LoginLayout = ({ children }: React.PropsWithChildren<{}>) => (
   <StyledCenterLayout>

@@ -6,7 +6,7 @@ import {
 
 import thunk from 'redux-thunk';
 
-import auth from '../app/login/store';
+import auth from '../app/auth/store';
 import spinners from '../app/shared/store/spinners';
 
 const reducer = combineReducers({

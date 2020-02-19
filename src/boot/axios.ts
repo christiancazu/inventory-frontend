@@ -4,14 +4,14 @@ import {
   USE_NOTIFY,
   notifyType
 } from '../app/shared/use/notification';
-import messages from '../app/config/messages';
-import jwtService from '../app/login/services/jwt.service';
+import messages from '../config/messages';
+import jwtService from '../app/auth/services/jwt';
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   headers: {
     'Accept': 'application/json',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json'
   },
 });
 
@@ -21,6 +21,9 @@ axiosInstance.interceptors.request.use(config => {
   const token = jwtService.getToken();
 
   token && (config.headers.common['Authorization'] = `Bearer ${token}`);
+
+  // prevent remove 'Content-Type': 'application/json' when data is undefined(axios bug)
+  (config.method === 'get') && (config.data = null);
 
   return config;
 });

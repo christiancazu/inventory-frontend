@@ -1,6 +1,6 @@
 import { types } from './actions';
 
-import Payload from '../../../login/interfaces/payload.interface';
+import Payload from '../../../auth/interfaces/payload';
 
 export enum spinnerType {
   processingForm = 'processingForm'

@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 // import { routes } from './routes';
-import { useCheckAuth } from './middleware.hook';
+import { useCheckAuth } from './middleware';
 
 import SpinnerPage from '../app/shared/components/SpinnerPage';
 
@@ -55,7 +55,7 @@ export const AppRouter: React.FC<{}> = () => {
           />
           <Route
             path='/login'
-            component={ React.lazy(() => import('../app/login')) }
+            component={ React.lazy(() => import('../app/auth')) }
             exact
           />
         </Switch>

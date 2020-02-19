@@ -8,7 +8,7 @@ export const routes: Array<object> = [
   },
   {
     path: '/login',
-    component:  React.lazy(() => import('../app/login')),
+    component:  React.lazy(() => import('../app/auth')),
     exact: true,
   },
 ];

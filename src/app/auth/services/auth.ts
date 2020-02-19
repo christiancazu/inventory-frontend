@@ -1,5 +1,5 @@
 import axiosInstance from '../../../boot/axios';
-import Credentials from '../interfaces/credentials.interface';
+import Credentials from '../interfaces/credentials';
 
 export default {
   signIn: (data: Credentials) => axiosInstance.post('auth/signIn', data),

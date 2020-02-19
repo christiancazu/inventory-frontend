@@ -1,9 +1,16 @@
 import React from 'react';
 
-export default function index() {
+import { StyledCenterLayout } from '../../assets/styled/index';
+import Dashboard from './Dashboard';
+
+export default function DashboardPage () {
+
   return (
-    <div>
-      DASHBOARD
-    </div>
+    <StyledCenterLayout>
+
+      <Dashboard />
+
+    </StyledCenterLayout>
   );
-}
+
+};

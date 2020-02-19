@@ -3,11 +3,19 @@ import {
 } from 'react';
 
 import store from '../store';
-import { GET_USER } from '../app/login/store/actions';
-import authService from '../app/login/services/auth.service';
-import { AxiosResponse } from 'axios';
-import { Auth } from '../app/login/store';
+import {
+  SET_USER, PURGE_USER
+} from '../app/auth/store/actions';
 
+import authService from '../app/auth/services/auth';
+import { Auth } from '../app/auth/store';
+import User from '../app/auth/interfaces/user';
+import { AxiosResponse } from 'axios';
+
+/**
+ * hook middleware
+ * fetch user from api to check authentication
+ */
 export const useCheckAuth = () => {
   const { user }: Auth = store.getState().auth;
 
@@ -17,12 +25,13 @@ export const useCheckAuth = () => {
 
     const checkAuth = async () => {
       try {
-        const { data }: AxiosResponse = await authService.getUser();
+        const { data }: AxiosResponse<User> = await authService.getUser();
 
-        store.dispatch(GET_USER(data));
+        store.dispatch(SET_USER(data));
 
         setAuth(true);
       } catch {
+        store.dispatch(PURGE_USER());
         setAuth(false);
       }
     };
